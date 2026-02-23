@@ -20,5 +20,7 @@ def get_days_from_today(date: str) -> int:
         return None
 
 
-print(get_days_from_today("2021-10-09"))
+if __name__ == "__main__":
+    
+    print(get_days_from_today("2021-10-09"))
 

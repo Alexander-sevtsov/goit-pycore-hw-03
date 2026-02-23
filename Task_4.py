@@ -10,18 +10,15 @@ def get_upcoming_birthdays(users: list[dict[str, str]]) -> list[dict[str, str]]:
         birthday = datetime.strptime(user["birthday"], "%Y.%m.%d").date()
         birthday_this_year = birthday.replace(year=today.year)
 
-
         if birthday_this_year < today:
             birthday_this_year = birthday_this_year.replace(year=today.year + 1)
 
         days_until_birthday = (birthday_this_year - today).days
 
-
         if 0 <= days_until_birthday <= 7:
             congratulation_date = birthday_this_year
             weekday = congratulation_date.weekday()
             
-
             if weekday == 5:  # Субота
                 congratulation_date += timedelta(days=2)
             elif weekday == 6:  # Неділя
@@ -42,7 +39,6 @@ if __name__ == "__main__":
         {"name": "Jane Smith", "birthday": "1990.02.20"}
     ]
 
-   
     congratulations: list[dict[str, str]] = get_upcoming_birthdays(users_list)
     
     print("Список привітань на цьому тижні:")

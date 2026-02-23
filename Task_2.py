@@ -3,7 +3,6 @@ import random
 
 def get_numbers_ticket(min_val: int, max_val: int, quantity: int) -> list[int]:
 
-
     if min_val < 1 or max_val > 1000 or quantity > (max_val - min_val + 1) or quantity <= 0:
         return []
 
